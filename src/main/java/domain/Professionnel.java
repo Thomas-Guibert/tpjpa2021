@@ -1,27 +1,21 @@
 package domain;
 
-public class Professionnel {
-	private int id;
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@DiscriminatorValue("U")
+public class Professionnel extends User{
+
 	private String url;
 	private String job;
 	
-	
-	public Professionnel(int id,String url, String job) {
-		this.id=id;
+	public Professionnel(String name, String mail, String mdp, List<RendezVous> rendezvous,String job, String url) {
+		super(name, mail, mdp, rendezvous);
 		this.url=url;
 		this.job=job;
 	}
-
-
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 
 	public String getUrl() {
 		return url;

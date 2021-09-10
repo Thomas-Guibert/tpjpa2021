@@ -2,19 +2,33 @@ package domain;
 
 import java.util.Date;
 
+import javax.persistence.*;
+
+@Entity
 public class RendezVous {
+	private long id;
 	private Date date;
 	private int durer;
-	private String user;
-	private String professionnel;
+	private User user;
+	private Professionnel professionnel;
 	private String description;
 
-	public RendezVous(Date date, int durer, String user, String professionnel, String description) {
+	public RendezVous(Date date, int durer, User user, Professionnel professionnel, String description) {
 		this.date = date;
 		this.durer = durer;
 		this.user = user;
 		this.professionnel = professionnel;
 		this.description = description;
+	}
+
+	@Id
+	@GeneratedValue
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Date getDate() {
@@ -33,19 +47,21 @@ public class RendezVous {
 		this.durer = durer;
 	}
 
-	public String getUser() {
+	@ManyToOne
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(String user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
-	public String getProfessionnel() {
+	@ManyToOne
+	public Professionnel getProfessionnel() {
 		return professionnel;
 	}
 
-	public void setProfessionnel(String professionnel) {
+	public void setProfessionnel(Professionnel professionnel) {
 		this.professionnel = professionnel;
 	}
 
