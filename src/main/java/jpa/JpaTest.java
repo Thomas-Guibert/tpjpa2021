@@ -6,6 +6,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import domain.User;
+
 
 public class JpaTest {
 
@@ -21,6 +23,8 @@ public class JpaTest {
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 		try {
+			User u1 = new User("Val","gazehmazr","mdp");
+			manager.persist(u1);
 			
 			
 		
