@@ -1,0 +1,16 @@
+// UML Diagramme TAA
+// ------------------
+
+// Chain elements like this
+[Utilisateur]<1-*>[RendezVous]
+[Professionnel]<1-*>[RendezVous]
+[Utilisateur]^[Professionnel]
+// Add notes
+//[Order]-[note: Aggregate Root ala DDD{bg:wheat}]
+
+// Add more detail
+[Utilisateur|-name: string;-mail: string;-password: string]
+
+[Professionnel|-id: int;-url: string;-job: string]
+
+[RendezVous|-date: date;-durée: string;-user: string;-professionnel: string;-description: string;]
