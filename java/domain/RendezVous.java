@@ -1,12 +1,11 @@
 package domain;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
 
 @Entity
-public class RendezVous implements Serializable {
+public class RendezVous {
 	private long id;
 	private Date date;
 	private int durer;

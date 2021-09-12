@@ -1,6 +1,5 @@
 package domain;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
@@ -8,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="person")
-public class User implements Serializable{
+public class User {
 	private long id;
 	private String name;
 	private String mail;

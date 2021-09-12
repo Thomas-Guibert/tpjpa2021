@@ -1,13 +1,12 @@
 package domain;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
 @DiscriminatorValue("U")
-public class Professionnel extends User implements Serializable{
+public class Professionnel extends User{
 
 	private String url;
 	private String job;
