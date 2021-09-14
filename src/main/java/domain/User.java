@@ -1,27 +1,39 @@
 package domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="person")
+@DiscriminatorColumn(name="TypeUtilisateur")
+@DiscriminatorValue("Patient")
 public class User implements Serializable{
 	private long id;
 	private String name;
+	private String nameF;
 	private String mail;
 	private String mdp;
-	private List<RendezVous> rendezvous; 
+	private List<RendezVous> rendezvous = new ArrayList<RendezVous>(); 
 
-	public User(String name, String mail, String mdp, List<RendezVous> rendezvous) {
+	public User(String name, String nameF, String mail, String mdp, List<RendezVous> rendezvous) {
 		this.name=name;
+		this.nameF=nameF;
 		this.mail=mail;
 		this.mdp=mdp;
 		this.rendezvous=rendezvous;
 	}
 	
+	public String getNameF() {
+		return nameF;
+	}
+
+	public void setNameF(String nameF) {
+		this.nameF = nameF;
+	}
+
 	@Id
 	@GeneratedValue
 	public long getId() {
@@ -49,6 +61,7 @@ public class User implements Serializable{
 		this.name = name;
 	}
 
+	@Column(unique = true)
 	public String getMail() {
 		return mail;
 	}

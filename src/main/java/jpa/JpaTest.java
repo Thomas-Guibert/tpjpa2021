@@ -6,8 +6,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import domain.Professionnel;
 import domain.User;
-import dao.UserDAO;
+import dao.*;
 
 
 public class JpaTest {
@@ -17,39 +18,36 @@ public class JpaTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		EntityManagerFactory factory = Persistence
+		/*EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("dev");
-		EntityManager manager = factory.createEntityManager();
-		////
+		EntityManager manager = factory.createEntityManager();*/
+		
 		UserDAO u = new UserDAO();
-		////
-		EntityTransaction tx = manager.getTransaction();
-		tx.begin();
+		ProfessionnelDAO p = new ProfessionnelDAO();
+		RendezVousDAO r = new RendezVousDAO();
+		
+		/*EntityTransaction tx = manager.getTransaction();
+		tx.begin();*/
 		try {
-			//Exercice1
-			/*User u1 = new User("Guibert","G@gmail.com","mdp2");
-			User u2 = new User("Thomas","G@gmail.com","mdp2");
-			manager.persist(u1);
-			manager.persist(u2);*/
-			//Exercice 2
-			/*User u1 = new User("name", "a@gmail.com", "mdp", null);
-			manager.persist(u1);*/
-			
 			u.createUser();
+			p.createProfessionnel();
 			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		tx.commit();
+		//tx.commit();
 		
-		///
 		u.getAllUserName();
-		u.getAllUser();
-		///
+		p.getAllProfessionnelName();
+		u.updateMdp(u.getUserByMail("thomas.g@etudiant.univ-rennes1.fr").get(0), "NewMDP");
+		//u.deleteUserByMail("thomas.g@etudiant.univ-rennes1.fr");
+		u.getAllUserMdp();
+		r.createRDV(u.getUserByMail("thomas.g@etudiant.univ-rennes1.fr").get(0), p.getProfessionnelByMail("ax@gmail.com").get(0));
+		u.getUserRendezVous("thomas.g@etudiant.univ-rennes1.fr");
 		
-		manager.close();
-		factory.close();
+		/*manager.close();
+		factory.close();*/
 	}
 
 }

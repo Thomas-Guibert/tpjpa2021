@@ -6,14 +6,14 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@DiscriminatorValue("U")
+@DiscriminatorValue("Professionnel")
 public class Professionnel extends User implements Serializable{
 
 	private String url;
 	private String job;
 	
-	public Professionnel(String name, String mail, String mdp, List<RendezVous> rendezvous,String job, String url) {
-		super(name, mail, mdp, rendezvous);
+	public Professionnel(String name,String nameF, String mail, String mdp, List<RendezVous> rendezvous, String job, String url) {
+		super(name, nameF, mail, mdp, rendezvous);
 		this.url=url;
 		this.job=job;
 	}
