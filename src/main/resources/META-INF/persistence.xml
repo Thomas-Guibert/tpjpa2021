@@ -53,10 +53,10 @@
             <property name="hibernate.archive.autodetection" value="class, hbm"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.password" value="Twinrai*39"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://anteros.istic.univ-rennes1.fr/mydatabase"/>
-            <property name="hibernate.connection.username" value="18003147"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.connection.password" value="123"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost/mydatabase"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.c3p0.min_size" value="5"/>
             <property name="hibernate.c3p0.max_size" value="20"/>
             <property name="hibernate.c3p0.timeout" value="300"/>

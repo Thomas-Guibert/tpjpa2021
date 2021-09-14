@@ -44,7 +44,7 @@ public class JpaTest {
 		//u.deleteUserByMail("thomas.g@etudiant.univ-rennes1.fr");
 		u.getAllUserMdp();
 		r.createRDV(u.getUserByMail("thomas.g@etudiant.univ-rennes1.fr").get(0), p.getProfessionnelByMail("ax@gmail.com").get(0));
-		u.getUserRendezVous("thomas.g@etudiant.univ-rennes1.fr");
+		//u.getUserRendezVous("thomas.g@etudiant.univ-rennes1.fr");
 		
 		/*manager.close();
 		factory.close();*/
