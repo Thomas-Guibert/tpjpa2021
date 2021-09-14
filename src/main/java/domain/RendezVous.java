@@ -14,6 +14,7 @@ public class RendezVous implements Serializable {
 	private Professionnel professionnel;
 	private String description;
 
+	public RendezVous() {}
 	public RendezVous(Date date, int durer, User user, Professionnel professionnel, String description) {
 		this.date = date;
 		this.durer = durer;

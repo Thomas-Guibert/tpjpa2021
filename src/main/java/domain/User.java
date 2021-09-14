@@ -18,6 +18,7 @@ public class User implements Serializable{
 	private String mdp;
 	private List<RendezVous> rendezvous = new ArrayList<RendezVous>(); 
 
+	public User() {}
 	public User(String name, String nameF, String mail, String mdp, List<RendezVous> rendezvous) {
 		this.name=name;
 		this.nameF=nameF;
@@ -33,6 +34,7 @@ public class User implements Serializable{
 	public void setNameF(String nameF) {
 		this.nameF = nameF;
 	}
+	
 
 	@Id
 	@GeneratedValue

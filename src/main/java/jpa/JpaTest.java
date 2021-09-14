@@ -29,8 +29,8 @@ public class JpaTest {
 		/*EntityTransaction tx = manager.getTransaction();
 		tx.begin();*/
 		try {
-			u.createUser();
-			p.createProfessionnel();
+			//u.createUser();
+			//p.createProfessionnel();
 			
 			
 		} catch (Exception e) {
@@ -46,6 +46,9 @@ public class JpaTest {
 		r.createRDV(u.getUserByMail("thomas.g@etudiant.univ-rennes1.fr").get(0), p.getProfessionnelByMail("ax@gmail.com").get(0));
 		//u.getUserRendezVous("thomas.g@etudiant.univ-rennes1.fr");
 		
+		System.out.println(u.showUser(u.getUserByMail("thomas.g@etudiant.univ-rennes1.fr").get(0)));
+		
+		System.out.println(u.showAllUser(u.getAllUser()));
 		/*manager.close();
 		factory.close();*/
 	}
