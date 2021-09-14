@@ -1,10 +1,14 @@
 package domain;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import java.io.Serializable;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,20 +23,22 @@ import javax.persistence.OneToMany;
 @DiscriminatorColumn(
 		name = "pro",
 		discriminatorType=DiscriminatorType.STRING)
-public class User {
+@DiscriminatorValue ("élève")
+public class User implements Serializable {
 	
 	private int id;
 	private String name;
 	private String email;
 	private String mdp;
-	private List<appointment> appointment;
+	private List<appointment> appointment = new ArrayList<appointment>();
 	
 
 
-	public User ( String name, String email, String mdp) {
+	public User ( String name, String email, String mdp, List<appointment> appointment) {
 		this.name = name;
 		this.email = email;
 		this.mdp = mdp;
+		this.appointment = appointment;
 }
 	
 	public String getName() {

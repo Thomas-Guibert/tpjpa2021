@@ -53,7 +53,7 @@
             <property name="hibernate.archive.autodetection" value="class, hbm"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.password" value="my-secret-pw"/>
+            <property name="hibernate.connection.password" value="1563"/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost/mydatabase"/>
             <property name="hibernate.connection.username" value="root"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>

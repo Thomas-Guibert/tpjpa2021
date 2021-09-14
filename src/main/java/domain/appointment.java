@@ -1,5 +1,6 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -8,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class appointment {
+public class appointment implements Serializable {
 	public appointment(Date date, int length, User User, professionnel professionnel, String description) {
 		this.date = date;
 		this.length = length;
